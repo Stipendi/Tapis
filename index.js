@@ -35,7 +35,7 @@ tapis.client.on("messageCreate", message => {
   if (message.content.startsWith(config.prefix)) { // IF PREFIX IS USED:
     const args = message.content.split(/\s+/); // get command arguments
     const commandName = args.shift().toLowerCase().slice(config.prefix.length); // get command name
-    let command = tapis.commands.find(cmd => cmd.name === commandName || cmd.aliases.includes(commandName)); // find the corresponding function;
+    let command = tapis.commands.find(cmd => cmd.name === commandName || cmd.aliases.includes(commandName)); // find the corresponding command
     if (command) { // if a command was found
       command.run(message, args); // ... run it and give the command the message and the arguments
     }
