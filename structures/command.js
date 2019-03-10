@@ -6,6 +6,7 @@ module.exports = class Command {
   constructor(name, options, callback) {
     this.name = name;
     this.run = callback;
-    options.aliases ? this.aliases = options.aliases : [];
+    this.aliases = options.aliases ? options.aliases : [];
+    this.ownerOnly = options.ownerOnly ? true : false;
   }
 }
